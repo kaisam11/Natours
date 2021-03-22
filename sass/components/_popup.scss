@@ -1,0 +1,133 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($fc-black, .5);
+    z-index: 9000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+
+    &__content {
+        @include absCenter;
+        background-color: $fc-white;
+        width: 75%;
+        box-shadow: 0 2rem 4rem rgba($fc-black, .2);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.25);
+        transition: all .4s .2s;
+
+        @media only screen and (max-width: 1050px) {
+            width: 90%;
+        }
+
+    }
+
+    &__left {
+        width: 33.333333%;
+        display: table-cell;
+
+        @include respond (tab-port) {
+            width: 100%;
+            display: inline-flex;
+        }
+
+    }
+
+    &__right {
+        width: 66.666667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+
+        @include respond (tab-port) {
+            width: 100%;
+            display: block;
+            padding: 2rem 4rem;
+        }
+
+        @include respond (phone) {
+            text-align: center;
+        }
+
+
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+
+        @include respond (tab-port) {
+            width: 50%;
+            float: left;
+        }
+
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $fc-grey-medium;
+
+        -webkit-hyphens: auto;
+        hyphens: auto;
+
+        @include respond (phone) {
+            margin-bottom: 3rem;
+            column-count: unset;
+        }
+    }
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $fc-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+
+            @include respond (tab-port) {
+                top: 2rem;
+                right: 2rem;
+                color: $fc-white;
+            }
+
+            @include respond (phone) {
+                top: 1rem;
+                right: 1rem;
+                color: $fc-white;
+            }
+
+        }
+
+        &:hover {
+            color: $fc-medium;
+        }
+    }
+}
