@@ -42,3 +42,24 @@
     }
   }
   
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: .7;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 5000000;
+  transition: var(--transition);
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}

@@ -54,6 +54,27 @@ ORDER: Base + typography > general layout + grid > page layout > components
   }
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: .7;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 5000000;
+  transition: var(--transition);
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
+
 *,
 *::after,
 *::before {
@@ -851,12 +872,6 @@ body {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.25);
   transition: all .4s .2s;
-}
-
-@media only screen and (max-width: 1050px) {
-  .popup__content {
-    width: 90%;
-  }
 }
 
 .popup__left {
