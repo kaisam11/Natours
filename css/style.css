@@ -61,7 +61,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
   right: 0;
   bottom: 0;
   background: #fff;
-  opacity: .7;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -1036,7 +1035,8 @@ body {
 }
 
 .row .col-2-of-3 {
-  width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem);
+  width: calc(
+ 2 * ((100% - 2 * 6rem) / 3) + 6rem);
 }
 
 .row .col-1-of-4 {
@@ -1044,11 +1044,13 @@ body {
 }
 
 .row .col-2-of-4 {
-  width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem);
+  width: calc(
+ 2 * ((100% - 3 * 6rem) / 4) + 6rem);
 }
 
 .row .col-3-of-4 {
-  width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+  width: calc(
+ 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
 }
 
 .header {
